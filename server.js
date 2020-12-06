@@ -27,7 +27,7 @@ const usersRouter = require("./routes/users");
 
 app.use("/profiles", profilesRouter);
 app.use("/users", usersRouter);
-
+// app.use("/googlelogin", usersRouter);
 
 app.listen(port, () => {
   console.log(`Server is running on port: ${port}`);
