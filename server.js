@@ -11,7 +11,6 @@ app.use(cors());
 app.use(express.json());
 
 const uri = process.env.ATLAS_URI;
-// const uri = "mongodb://localhost/database";
 mongoose.connect(uri, {
   useNewUrlParser: true,
   useCreateIndex: true,
@@ -27,7 +26,6 @@ const usersRouter = require("./routes/users");
 
 app.use("/profiles", profilesRouter);
 app.use("/users", usersRouter);
-// app.use("/googlelogin", usersRouter);
 
 app.listen(port, () => {
   console.log(`Server is running on port: ${port}`);
