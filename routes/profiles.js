@@ -10,10 +10,12 @@ router.route("/").get((req, res) => {
 router.route("/add").post((req, res) => {
   const name = req.body.name;
   const description = req.body.description;
+  const picture = req.body.picture;
   console.log(name, description)
   const newProfile = new Profile({
     name,
     description,
+    picture
   });
 
   newProfile

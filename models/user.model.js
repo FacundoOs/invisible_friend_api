@@ -17,6 +17,10 @@ const userSchema = new Schema(
       trim: true,
       unique: true,
       lowercase: true
+    },
+    picture: {
+      type: String,
+      required: false,
     }
   },
   {
