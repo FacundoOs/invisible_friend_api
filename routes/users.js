@@ -5,9 +5,7 @@ const { OAuth2Client } = require("google-auth-library");
 
 let User = require("../models/user.model");
 
-const client = new OAuth2Client(
-  "1021930562113-djpn8e3ktb7ank5of09fadbc2982f73m.apps.googleusercontent.com"
-);
+const client = new OAuth2Client("1021930562113-djpn8e3ktb7ank5of09fadbc2982f73m.apps.googleusercontent.com");
 
 router.route("/").get((req, res) => {
   User.find()
@@ -22,7 +20,7 @@ router.route("/googlelogin").post((req, res) => {
     .verifyIdToken({
       idToken: tokenId,
       audience:
-        "1021930562113-djpn8e3ktb7ank5of09fadbc2982f73m.apps.googleusercontent.com",
+      "1021930562113-djpn8e3ktb7ank5of09fadbc2982f73m.apps.googleusercontent.com",
     })
     .then((response) => {
       const { email_verified, name, email, picture } = response.payload;

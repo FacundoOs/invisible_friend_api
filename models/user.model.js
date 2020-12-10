@@ -21,7 +21,10 @@ const userSchema = new Schema(
     picture: {
       type: String,
       required: false,
-    }
+    },
+    groups_id: [{
+      type: String,
+    }]
   },
   {
     timestamps: true,
