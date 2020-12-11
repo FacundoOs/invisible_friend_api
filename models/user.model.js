@@ -4,27 +4,39 @@ const Schema = mongoose.Schema;
 
 const userSchema = new Schema(
   {
-    name: {
+    googleId: {
       type: String,
       required: true,
       unique: true,
       trim: true,
       minlength: 3,
     },
-    email: {
+    displayName: {
       type: String,
       required: true,
-      trim: true,
-      unique: true,
-      lowercase: true
+      // trim: true,
+      // unique: true,
+      // lowercase: true
     },
-    picture: {
+    firstName: {
       type: String,
-      required: false,
+      required: true,
     },
-    groups_id: [{
+    lastName: {
       type: String,
-    }]
+      required: true,
+    },
+    image: {
+      type: String,
+    },
+    createdAt: {
+      type: Date,
+      default: Date.now,
+    },
+
+    // groups_id: [{
+    //   type: String,
+    // }]
   },
   {
     timestamps: true,
