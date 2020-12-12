@@ -44,10 +44,6 @@ connection.once("open", () => {
 
 
 //
-app.use((req, res, next) => {
-  res.header('Access-Control-Allow-Origin', '*');
-  next();
-});
 
 
 // Sessions
@@ -56,6 +52,7 @@ app.use(session({
   resave: false,
   //don't create a session until something is store
   saveUninitialized: false,
+  store : new MongoStore({ mongooseConnection: mongoose.connection })
 }))
 
 //Passport middleware
@@ -73,6 +70,7 @@ app.use("/auth", require("./routes/auth"))
 
 app.use("/profiles", profilesRouter);
 app.use("/users", usersRouter);
+
 
 //
 app.listen(port, () => {
