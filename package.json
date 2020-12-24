@@ -10,6 +10,7 @@
     "dev": "cross-env NODE_ENV=development nodemon server"
   },
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "connect-mongo": "^3.2.0",
     "cors": "^2.8.5",
     "cross-env": "^7.0.3",
@@ -22,6 +23,7 @@
     "nodemon": "^2.0.6",
     "passport": "^0.4.1",
     "passport-google-oauth20": "^2.0.0",
+    "passport-local": "^1.0.0",
     "path": "^0.12.7"
   },
   "engines": {

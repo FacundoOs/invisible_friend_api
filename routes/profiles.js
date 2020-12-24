@@ -8,14 +8,13 @@ router.route("/").get((req, res) => {
 });
 
 router.route("/add").post((req, res) => {
-  const name = req.body.name;
+  const username = req.body.username;
   const description = req.body.description;
-  const picture = req.body.picture;
-  console.log(name, description)
+  // const picture = req.body.picture;
+  console.log(username, description)
   const newProfile = new Profile({
-    name,
-    description,
-    picture
+    username,
+    description
   });
 
   newProfile
@@ -25,6 +24,7 @@ router.route("/add").post((req, res) => {
 });
 
 router.route("/:id").get((req, res) => {
+  console.log(req.params.id)
   Profile.findById(req.params.id)
     .then((profile) => res.json(profile))
     .catch((err) => res.status(400).json("Error: " + err));
